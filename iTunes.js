@@ -1,18 +1,3 @@
-/*************************************
-
-iTunes
-  
-**************************************
-
-[rewrite_local]
-^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ url script-response-body https://raw.githubusercontent.com/qingfeng178/qingfeng/main/iTunes.js
-
-[mitm]
-hostname = buy.itunes.apple.com
-
-*************************************/
-
-
 var chxm1023 = JSON.parse($response.body);
 const ua = $request.headers['User-Agent'] || $request.headers['user-agent'];
 const bundle_id = chxm1023.receipt["bundle_id"] || chxm1023.receipt["Bundle_Id"];
